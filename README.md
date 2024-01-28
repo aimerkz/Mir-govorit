@@ -9,4 +9,4 @@ $ cd mir-govorit
 $ cp env.example .env
 $ docker-compose up -d
 ```
-Документация к API: [Nova-test API](http://127.0.0.1:8001/api/docs/)
+Документация к API: [Mir-govorit API](http://127.0.0.1:8001/api/docs/)
