@@ -36,4 +36,4 @@ repos:
           flake8-print,
           flake8-simplify,
         ]
-        exclude: "[a-zA-Z]*/(migrations)/(.)*"
+        exclude: "(migrations)/(.)*"
