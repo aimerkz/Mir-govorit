@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "mir-govorit"
+version = "0.1.0"
+description = ""
+authors = ["Artem Merkulov <artem-merk96@yandex.ru>"]
+readme = "README.md"
+packages = [{include = "mir_govorit"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+djangorestframework = "^3.14.0"
+drf-spectacular = "^0.27.1"
+python-dotenv = "^1.0.1"
+gunicorn = "^21.2.0"
+psycopg2-binary = "^2.9.9"
+envparse = "^0.2.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.6.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.yapf]
+based_on_style = "google"
+column_limit = 120
+
+[tool.yapfignore]
+ignore_patterns = [
+    ".git",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".venv",
+    "migrations/*",
+    "test/*",
+    "pyproject.toml"
+]
+
+[tool.isort]
+py_version = 310
+skip = [".gitignore", ".dockerignore"]
+profile = "django"
+line_length = 120

@@ -1,0 +1,37 @@
+version: '3.8'
+
+
+services:
+
+  backend:
+    build:
+      context: .
+    container_name: backend
+    restart: always
+    ports:
+      - '${APP_PORT}:8000'
+    depends_on:
+      - postgres
+    env_file:
+      - ./.env
+
+  postgres:
+    container_name: backend_db
+    image: postgres:14.6-alpine
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASS}
+      - POSTGRES_DB=${DB_NAME}
+    ports:
+      - '${DB_PORT}:5432'
+    healthcheck:
+      test: pg_isready -U ${DB_USER} -d ${DB_NAME}
+      interval: 3s
+      timeout: 2s
+      retries: 3
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
+    driver: local
