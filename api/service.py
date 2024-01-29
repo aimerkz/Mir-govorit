@@ -1,4 +1,4 @@
-from django.db.models import F
+from django.db.models import F, Q, QuerySet, Subquery
 
 from api.exceptions import ProductException, RecipeException
 from api.models import Product, Recipe, RecipeProduct
@@ -21,6 +21,13 @@ class RepoAdapter:
             return Product.objects.get(id=self.product_id)
         except Product.DoesNotExist:
             raise ProductException()
+
+    def get_recipe_product(self) -> QuerySet[RecipeProduct]:
+        return RecipeProduct.objects.filter(product_id=self.product_id)
+
+    def get_recipes_without_product(self) -> QuerySet[Recipe]:
+        recipe_products_lt_10 = self.get_recipe_product().filter(product_weight__lt=10).values('recipe_id')
+        return Recipe.objects.filter(~Q(products__id=self.product_id) | Q(pk__in=Subquery(recipe_products_lt_10)))
 
 
 class UpdateService:

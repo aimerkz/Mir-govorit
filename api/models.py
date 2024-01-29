@@ -41,7 +41,7 @@ class Recipe(BaseModel):
 
 
 class RecipeProduct(BaseModel):
-    product_id = models.ForeignKey('Product', on_delete=models.CASCADE)
+    product_id = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='recipe_product')
     product_weight = models.PositiveIntegerField(verbose_name='Вес продукта в граммах', default=1)
     recipe_id = models.ForeignKey('Recipe', on_delete=models.CASCADE)
 

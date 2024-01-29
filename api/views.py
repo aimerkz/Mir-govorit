@@ -24,3 +24,11 @@ def add_product_to_recipe(request: Request, recipe_id: int, product_id: int, wei
     recipe, product = RepoAdapter(recipe_id, None).get_recipe(), RepoAdapter(None, product_id).get_product()
     UpdateService(recipe, product).add_product_to_recipe(weight)
     return Response(status=HTTP_201_CREATED, data='Success!')
+
+
+def show_recipes_without_product(request: Request, product_id: int):
+    """
+    Функция возвращает все рецепты, в которых указанный продукт отсутствует
+    или присутствует в количестве меньше 10 грамм
+    """
+    RepoAdapter(None, product_id).get_recipes_without_product()
