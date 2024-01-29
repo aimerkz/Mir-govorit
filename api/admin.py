@@ -7,6 +7,7 @@ from api.models import Product, Recipe, RecipeProduct
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'number_of_uses', 'created_at', 'updated_at')
     search_fields = ('name',)
+    list_editable = ('name', 'number_of_uses')
     list_filter = ('created_at', 'updated_at')
     empty_value_display = 'empty'
     list_per_page = 20

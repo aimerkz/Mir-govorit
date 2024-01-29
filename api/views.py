@@ -1,3 +1,5 @@
+from django.http import HttpResponse
+from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.request import Request
 from rest_framework.response import Response
@@ -26,9 +28,10 @@ def add_product_to_recipe(request: Request, recipe_id: int, product_id: int, wei
     return Response(status=HTTP_201_CREATED, data='Success!')
 
 
-def show_recipes_without_product(request: Request, product_id: int):
+def show_recipes_without_product(request: Request, product_id: int) -> HttpResponse:
     """
     Функция возвращает все рецепты, в которых указанный продукт отсутствует
     или присутствует в количестве меньше 10 грамм
     """
-    RepoAdapter(None, product_id).get_recipes_without_product()
+    recipes = RepoAdapter(None, product_id).get_recipes_without_product()
+    return render(request, 'recipes.html', context={'recipes': recipes})

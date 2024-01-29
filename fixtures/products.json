@@ -1,62 +1,62 @@
 [
-  {
+{
     "model": "api.product",
     "pk": 1,
     "fields": {
-      "created_at": "2024-01-28T10:49:39.338Z",
-      "updated_at": "2024-01-28T10:49:39.338Z",
-      "name": "Творог",
-      "number_of_uses": 0
+        "created_at": "2024-01-28T10:49:39.338Z",
+        "updated_at": "2024-01-29T07:49:36.262Z",
+        "name": "Творог",
+        "number_of_uses": 1
     }
-  },
-  {
+},
+{
     "model": "api.product",
     "pk": 2,
     "fields": {
-      "created_at": "2024-01-28T11:06:04.013Z",
-      "updated_at": "2024-01-28T11:06:04.013Z",
-      "name": "Яйцо",
-      "number_of_uses": 0
+        "created_at": "2024-01-28T11:06:04.013Z",
+        "updated_at": "2024-01-29T07:49:36.259Z",
+        "name": "Яйцо",
+        "number_of_uses": 1
     }
-  },
-  {
+},
+{
     "model": "api.product",
     "pk": 3,
     "fields": {
-      "created_at": "2024-01-28T11:34:57.433Z",
-      "updated_at": "2024-01-28T11:34:57.433Z",
-      "name": "Батон",
-      "number_of_uses": 0
+        "created_at": "2024-01-28T11:34:57.433Z",
+        "updated_at": "2024-01-29T07:50:21.203Z",
+        "name": "Батон",
+        "number_of_uses": 1
     }
-  },
-  {
+},
+{
     "model": "api.product",
     "pk": 4,
     "fields": {
-      "created_at": "2024-01-28T11:35:02.154Z",
-      "updated_at": "2024-01-28T11:35:02.154Z",
-      "name": "Колбаса",
-      "number_of_uses": 0
+        "created_at": "2024-01-28T11:35:02.154Z",
+        "updated_at": "2024-01-29T07:50:21.202Z",
+        "name": "Колбаса",
+        "number_of_uses": 1
     }
-  },
-  {
+},
+{
     "model": "api.product",
     "pk": 5,
     "fields": {
-      "created_at": "2024-01-28T11:35:06.225Z",
-      "updated_at": "2024-01-28T11:35:06.225Z",
-      "name": "Сыр",
-      "number_of_uses": 0
+        "created_at": "2024-01-28T11:35:06.225Z",
+        "updated_at": "2024-01-29T07:50:21.201Z",
+        "name": "Сыр",
+        "number_of_uses": 1
     }
-  },
-  {
+},
+{
     "model": "api.product",
     "pk": 6,
     "fields": {
-      "created_at": "2024-01-28T11:35:11.862Z",
-      "updated_at": "2024-01-28T11:35:11.862Z",
-      "name": "Сливочное масло",
-      "number_of_uses": 0
+        "created_at": "2024-01-28T11:35:11.862Z",
+        "updated_at": "2024-01-29T07:50:21.199Z",
+        "name": "Сливочное масло",
+        "number_of_uses": 1
     }
-  }
+}
 ]

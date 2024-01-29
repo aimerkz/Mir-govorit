@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<table style="width:50%", border="1">
+    {% for recipe in recipes %}
+    <TR>
+        <TD class="c1">{{recipe.id}}</TD>
+        <TD class="c2">{{recipe.name}}</TD>
+    </TR>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,20 @@
+[
+{
+    "model": "api.recipe",
+    "pk": 1,
+    "fields": {
+        "created_at": "2024-01-29T07:48:55.846Z",
+        "updated_at": "2024-01-29T07:48:55.847Z",
+        "name": "Сырники"
+    }
+},
+{
+    "model": "api.recipe",
+    "pk": 2,
+    "fields": {
+        "created_at": "2024-01-29T07:50:14.235Z",
+        "updated_at": "2024-01-29T07:50:14.235Z",
+        "name": "Бутерброд"
+    }
+}
+]

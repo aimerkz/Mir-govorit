@@ -8,6 +8,8 @@ services:
       context: .
     container_name: backend
     restart: always
+    volumes:
+      - static:/mir-govorit/static/
     ports:
       - '${APP_PORT}:8000'
     depends_on:
@@ -32,6 +34,18 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
 
+
+  nginx:
+    image: nginx:1.25.2-alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - static:/var/html/static/
+    depends_on:
+      - backend
+
 volumes:
+  static:
   db_data:
     driver: local
